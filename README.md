@@ -1,6 +1,12 @@
 # Sf Rspec Rails 
  
 ##Learning Competencies 
+- What to test: We test behavior not implementation
+- How to test models in Rails
+- How to test controllers in Rails
+- How to write feature tests in Rails
+- How to fix broken tests
+- How to implement pending tests
 
 ##Summary 
 
