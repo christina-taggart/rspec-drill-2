@@ -9,10 +9,14 @@ require 'database_cleaner'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+
+
 RSpec.configure do |config|
   config.include Capybara::DSL
 
   config.mock_with :rspec
+
+  config.use_transactional_fixtures = false
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

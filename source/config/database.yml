@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: rspec_rails_development
+  username:
+  password:
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: rspec_rails_test
+  username:
+  password:
+  host: localhost
+  port: 5432
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: rspec_rails_production
+  username:
+  password:
+  host: localhost
+  port: 5432
