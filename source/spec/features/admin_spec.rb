@@ -12,7 +12,7 @@ feature 'Admin panel' do
 
     it "can delete a post by clicking the delete link next to a post"
 
-    it "can create a new post and view it" do
+    it "can create a neost and view it" do
        visit new_admin_post_url
 
        expect {
