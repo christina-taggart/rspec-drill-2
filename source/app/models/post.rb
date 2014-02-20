@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 
   scope :recent, order: "created_at DESC", limit: 5
 
-  before_save :titleize_title
+  before_save :titleize_title, :generate_slug
 
   validates_presence_of :title, :content
 
@@ -11,5 +11,9 @@ class Post < ActiveRecord::Base
 
   def titleize_title
     self.title = title.titleize
+  end
+
+  def generate_slug
+    self.slug = title.downcase.gsub(/[^ \w]/, "").gsub(/ /, "-")
   end
 end

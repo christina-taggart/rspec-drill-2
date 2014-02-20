@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 describe Post do
+  let(:post) { FactoryGirl.create(:post) }
+
   it "title should be automatically titleized before save" do
-    pending
+    expect(post.title.titleize).to eq post.title
   end
 
   it "post should be unpublished by default" do
-    pending
+    expect(post.is_published).to eq false
   end
 
   # a slug is an automaticaly generated url-friendly
