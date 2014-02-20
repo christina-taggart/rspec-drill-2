@@ -776,3 +776,21 @@ Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-19 16:56:47 -0800
 Served asset /application.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.7ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (297.4ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.8ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.0ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (315.8ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (8.9ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (36.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')

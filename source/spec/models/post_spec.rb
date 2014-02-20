@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 describe Post do
+  let!(:post) { Post.create(title: "new title", content: "Text goes here") }
   it "title should be automatically titleized before save" do
-    pending
+    expect(post.title) == "new title".titleize
   end
 
   it "post should be unpublished by default" do
