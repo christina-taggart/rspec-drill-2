@@ -1,29 +1,27 @@
 require 'spec_helper'
 
-feature 'User browsing the website' do
+feature 'User browsing the website', js: true do
   context "on homepage" do
+    let!(:post){ Post.create title: 'new title', content: 'tapirs' }
     it "sees a list of recent posts titles" do
-      pending
-      # given a user and a list of posts
-      # user visits the homepage
-      # user can see the posts titles
+      visit posts_path
+      expect(page).to have_content post.title
     end
 
     it "can click on titles of recent posts and should be on the post show page" do
-      pending
-      # given a user and a list of posts
-      # user visits the homepage
-      # when a user can clicks on a post title they should be on the post show page
+      visit posts_path
+      click_link(post.title)
+      expect(current_path).to eq post_path id: post.id
     end
   end
 
   context "post show page" do
+    let!(:post){ Post.create title: 'new title', content: 'tapirs' }
     it "sees title and body of the post" do
-      pending
-      # given a user and post(s)
-      # user visits the post show page
-      # user should see the post title
-      # user should see the post body
+      visit post_path id: post.id
+      expect(page).to have_content post.title
+      expect(page).to have_content post.content
+
     end
   end
 end
