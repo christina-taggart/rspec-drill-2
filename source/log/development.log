@@ -938,3 +938,88 @@ Connecting to database specified by database.yml
   [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:38:06 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-19 17:38:07 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posts/1/edit" for 127.0.0.1 at 2014-02-19 17:38:10 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered admin/posts/_form.html.erb (1.4ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-19 17:38:10 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started PUT "/admin/posts/1" for 127.0.0.1 at 2014-02-19 17:38:14 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yeQBO+7R76312ZSK9C2fNBcQOCHKgtDxT2mKAaZFlAw=", "post"=>{"title"=>"New Stuff", "content"=>"blobssss", "is_published"=>"0"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mUPDATE "posts" SET "title" = 'New Stuff', "slug" = 'new-stuff', "updated_at" = '2014-02-20 01:38:14.346053' WHERE "posts"."id" = 1[0m
+  [1m[35m (15.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/posts/1
+Completed 302 Found in 21ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/admin/posts/1" for 127.0.0.1 at 2014-02-19 17:38:14 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-19 17:38:14 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:38:16 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered admin/posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-19 17:38:16 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.0ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (354.3ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (53.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (68.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.1ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (345.3ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.7ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (321.4ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
