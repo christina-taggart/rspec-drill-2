@@ -8,29 +8,46 @@ describe Admin::PostsController do
     end
 
     it "#new" do
-      pending
+      get :new
+      expect(assigns(:post)).to be_a_new(Post)
     end
 
     context "#create" do
       it "creates a post with valid params" do
-        pending
+        expect {
+          post :create, post: FactoryGirl.attributes_for(:post)
+        }.to change { Post.count }.by(1)
       end
       it "doesn't create a post when params are invalid" do
-        pending
+        expect {
+          post :create
+        }.not_to change { Post.count }
       end
     end
 
-    context "#edit" do
+    context "#updates" do
+      let!(:post) { FactoryGirl.create :post}
       it "updates a post with valid params" do
-        pending
+        expect {
+          put :update, id: post.id, post: { title: "terminator" }
+        }.to change { post.reload.title }.to("terminator")
       end
       it "doesn't update a post when params are invalid" do
-        pending
+        expect {
+          put :update, id: post.id
+        }.not_to change { post.reload.title }
       end
     end
 
-    it "#destroy" do
-      pending
+    context "#destroy" do
+      let!(:post) { FactoryGirl.create :post}
+      it "destroys the post" do
+        expect {
+          puts "*" * 50
+          p post
+          delete :destroy, id: post.id
+          }.to change { Post.count }.by(-1)
+      end
     end
   end
 end
