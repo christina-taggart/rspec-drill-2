@@ -8,7 +8,18 @@ feature 'Admin panel' do
       expect(page).to have_content "New Title"
     end
 
-    it "can edit a post by clicking the edit link next to a post"
+    it "can edit a post by clicking the edit link next to a post" do
+      visit admin_posts_path
+      expect {
+      click_button 'Edit'
+      current_path.should == edit_admin_post_path(post)
+      fill_in 'post_title', with: "New Post Title"
+      click_button 'Save'
+      current_path.should == admin_post_path(post)
+      expect(page).to have_content "New Post Title"
+      }
+
+    end
 
     it "can delete a post by clicking the delete link next to a post"
 

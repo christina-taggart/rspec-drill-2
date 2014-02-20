@@ -7,11 +7,9 @@ describe Post do
   end
 
   it "post should be unpublished by default" do
-    pending
+    expect(post.is_published?).to eq(false)
   end
 
-  # a slug is an automaticaly generated url-friendly
-  # version of the title
   it "slug should be automatically generated" do
     post = Post.new
     post.title   = "New post!"
