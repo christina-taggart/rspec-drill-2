@@ -1,0 +1,11 @@
+<h1>New template for admin/posts!</h1>
+
+<%= form_for @post do |f| %>
+  <%= f.label :post_title %>
+  <%= f.text_field :title %><br/>
+  <%= f.label :post_content %>
+  <%= f.text_area :content %><br/>
+  <%= f.label :post_is_published %>
+  <%= f.check_box :is_published? %>
+  <%= f.submit "Save" %>
+<% end %>
