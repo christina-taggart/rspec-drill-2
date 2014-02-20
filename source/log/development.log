@@ -1023,3 +1023,147 @@ Connecting to database specified by database.yml
   [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.1ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (303.8ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.2ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.2ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (324.7ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (8.6ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.2ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (327.7ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.8ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.1ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (323.4ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (7.5ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.7ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (315.6ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.9ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.8ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (305.1ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.6ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (119.1ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (325.8ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.6ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.5ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (352.1ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (133.1ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.3ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (322.5ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (115.8ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (356.0ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.7ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.8ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (314.0ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.4ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (327.7ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.6ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.8ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (402.9ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.5ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (116.5ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (315.4ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (118.3ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (301.4ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (117.5ms)[0m  DROP DATABASE IF EXISTS "rspec_rails_challenge_test"
+  [1m[36m (316.9ms)[0m  [1mCREATE DATABASE "rspec_rails_challenge_test" ENCODING = 'utf8'[0m
+  [1m[35m (8.5ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "slug" character varying(255), "title" character varying(255), "content" text, "is_published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130423183943')
