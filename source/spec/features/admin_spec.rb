@@ -2,7 +2,11 @@ require 'spec_helper'
 
 feature 'Admin panel' do
   context "on admin homepage" do
-    it "can see a list of recent posts"
+    let!(:post) { Post.create(title: "New Title", content: "Text goes here") }
+    it "can see a list of recent posts" do
+      visit admin_posts_path
+      expect(page).to have_content "New Title"
+    end
 
     it "can edit a post by clicking the edit link next to a post"
 
