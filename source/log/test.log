@@ -1820,3 +1820,757 @@ Redirected to http://test.host/admin/posts
 Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
   [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (4.9ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.1ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Recusandae dolorum et qui."], ["created_at", Thu, 20 Feb 2014 00:31:30 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "natus"], ["updated_at", Thu, 20 Feb 2014 00:31:30 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:31:30 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Suscipit cupiditate autem corporis ratione et dolorem."], ["created_at", Thu, 20 Feb 2014 00:31:30 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "ullam"], ["updated_at", Thu, 20 Feb 2014 00:31:30 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 16:31:30 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 16:31:31 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 00:31:31 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 00:31:31 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts/3
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+Started GET "/admin/posts/3" for 127.0.0.1 at 2014-02-19 16:31:31 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered admin/posts/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (4.3ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Deserunt culpa non ea eum quia."], ["created_at", Thu, 20 Feb 2014 00:31:48 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "quidem"], ["updated_at", Thu, 20 Feb 2014 00:31:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 16:31:48 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 38ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 16:31:48 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 00:31:48 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 00:31:48 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts/2
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+Started GET "/admin/posts/2" for 127.0.0.1 at 2014-02-19 16:31:48 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered admin/posts/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (3.1ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.3ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Reprehenderit veritatis qui commodi consectetur quam eaque."], ["created_at", Thu, 20 Feb 2014 00:32:00 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "voluptatem"], ["updated_at", Thu, 20 Feb 2014 00:32:00 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:32:00 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Unde sunt quia non cupiditate."], ["created_at", Thu, 20 Feb 2014 00:32:00 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "vitae"], ["updated_at", Thu, 20 Feb 2014 00:32:00 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 16:32:00 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 16:32:01 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 00:32:01 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 00:32:01 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts/3
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+Started GET "/admin/posts/3" for 127.0.0.1 at 2014-02-19 16:32:01 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  Rendered admin/posts/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (5.2ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.4ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Necessitatibus pariatur qui beatae ut earum praesentium nihil."], ["created_at", Thu, 20 Feb 2014 00:41:04 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "quae"], ["updated_at", Thu, 20 Feb 2014 00:41:04 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "In id sed natus aliquam."], ["created_at", Thu, 20 Feb 2014 00:41:05 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "labore"], ["updated_at", Thu, 20 Feb 2014 00:41:05 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[35mPost Load (1.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 2]]
+Started GET "/admin/posts/2/edit" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered admin/posts/_form.html.erb (3.5ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+Started PUT "/admin/posts/2" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"terminator", "content"=>"\nIn id sed natus aliquam.", "is_published"=>"1"}, "commit"=>"Save", "id"=>"2"}
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  UPDATE "posts" SET "title" = 'terminator', "content" = '
+In id sed natus aliquam.', "is_published" = 't', "updated_at" = '2014-02-20 00:41:05.144598' WHERE "posts"."id" = 2
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/2
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+Started GET "/admin/posts/2" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered admin/posts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Culpa consequuntur commodi qui ad perspiciatis et repellendus."], ["created_at", Thu, 20 Feb 2014 00:41:05 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "rerum"], ["updated_at", Thu, 20 Feb 2014 00:41:05 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 00:41:05 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 00:41:05 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts/4
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+Started GET "/admin/posts/4" for 127.0.0.1 at 2014-02-19 16:41:05 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (4.0ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.3ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Laborum ratione nisi dolorem totam."], ["created_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "reiciendis"], ["updated_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Ipsum in animi rerum dolor optio non."], ["created_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "aperiam"], ["updated_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[35mPost Load (1.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 2]]
+Started GET "/admin/posts/2/edit" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered admin/posts/_form.html.erb (4.3ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.7ms)
+Started PUT "/admin/posts/2" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"terminator", "content"=>"\nIpsum in animi rerum dolor optio non.", "is_published"=>"1"}, "commit"=>"Save", "id"=>"2"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  UPDATE "posts" SET "title" = 'terminator', "content" = '
+Ipsum in animi rerum dolor optio non.', "is_published" = 't', "updated_at" = '2014-02-20 00:43:02.654854' WHERE "posts"."id" = 2
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/2
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+Started GET "/admin/posts/2" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered admin/posts/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Veritatis commodi voluptas voluptatem ut libero ut."], ["created_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "est"], ["updated_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started DELETE "/admin/posts/3" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Aut velit vel nihil consequatur."], ["created_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "officia"], ["updated_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 00:43:02 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/5
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+Started GET "/admin/posts/5" for 127.0.0.1 at 2014-02-19 16:43:02 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "5"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (3.4ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.3ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Ut est et sequi molestiae error quae illum a."], ["created_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "velit"], ["updated_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Itaque id quaerat voluptatem soluta rerum accusantium delectus."], ["created_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "est"], ["updated_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 2]]
+Started GET "/admin/posts/2/edit" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered admin/posts/_form.html.erb (3.5ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.6ms)
+Started PUT "/admin/posts/2" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"terminator", "content"=>"\nItaque id quaerat voluptatem soluta rerum accusantium delectus.", "is_published"=>"1"}, "commit"=>"Save", "id"=>"2"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  UPDATE "posts" SET "title" = 'terminator', "content" = '
+Itaque id quaerat voluptatem soluta rerum accusantium delectus.', "is_published" = 't', "updated_at" = '2014-02-20 01:06:07.255138' WHERE "posts"."id" = 2
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/2
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+Started GET "/admin/posts/2" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered admin/posts/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.6ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Tenetur molestias maiores incidunt eligendi."], ["created_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "et"], ["updated_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started DELETE "/admin/posts/3" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Quos expedita molestias et rerum velit ut officia."], ["created_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "voluptatem"], ["updated_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 01:06:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/5
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+Started GET "/admin/posts/5" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "5"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:07 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" 
+  Rendered admin/posts/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.1ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (3.7ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Quas voluptas quos in eum."], ["created_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "recusandae"], ["updated_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Laboriosam accusamus quidem eos."], ["created_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "maiores"], ["updated_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[35mPost Load (1.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 2]]
+Started GET "/admin/posts/2/edit" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered admin/posts/_form.html.erb (3.5ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+Started PUT "/admin/posts/2" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"terminator", "content"=>"\nLaboriosam accusamus quidem eos.", "is_published"=>"1"}, "commit"=>"Save", "id"=>"2"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  UPDATE "posts" SET "title" = 'terminator', "content" = '
+Laboriosam accusamus quidem eos.', "is_published" = 't', "updated_at" = '2014-02-20 01:06:31.272830' WHERE "posts"."id" = 2
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/2
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+Started GET "/admin/posts/2" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered admin/posts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Illum asperiores sunt accusamus vitae."], ["created_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "maiores"], ["updated_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started DELETE "/admin/posts/3" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Nostrum et tempora nisi et vel consequatur."], ["created_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "voluptatum"], ["updated_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/5
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+Started GET "/admin/posts/5" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "5"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Numquam alias assumenda tempora quidem aut modi."], ["created_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "impedit"], ["updated_at", Thu, 20 Feb 2014 01:06:31 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+Started GET "/admin/posts/6/edit" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "6"]]
+  Rendered admin/posts/_form.html.erb (1.7ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+Started PUT "/admin/posts/6" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"terminator", "content"=>"\nNumquam alias assumenda tempora quidem aut modi.", "is_published"=>"0"}, "commit"=>"Save", "id"=>"6"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mUPDATE "posts" SET "title" = 'terminator', "content" = '
+Numquam alias assumenda tempora quidem aut modi.', "updated_at" = '2014-02-20 01:06:31.387123' WHERE "posts"."id" = 6[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts/6
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+Started GET "/admin/posts/6" for 127.0.0.1 at 2014-02-19 17:06:31 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'intro_to_rails_test'
+  [1m[36m (3.6ms)[0m  [1mTRUNCATE TABLE "posts" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.8ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Et sunt natus eos laboriosam non porro sed."], ["created_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "provident"], ["updated_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Error voluptatem sed ipsa illo."], ["created_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "eos"], ["updated_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 2]]
+Started GET "/admin/posts/2/edit" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered admin/posts/_form.html.erb (4.2ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+Started PUT "/admin/posts/2" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"terminator", "content"=>"\nError voluptatem sed ipsa illo.", "is_published"=>"1"}, "commit"=>"Save", "id"=>"2"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  UPDATE "posts" SET "title" = 'terminator', "content" = '
+Error voluptatem sed ipsa illo.', "is_published" = 't', "updated_at" = '2014-02-20 01:13:18.361193' WHERE "posts"."id" = 2
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/2
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+Started GET "/admin/posts/2" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered admin/posts/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Nostrum ut saepe id non quam deleniti."], ["created_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "eius"], ["updated_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started DELETE "/admin/posts/3" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts" 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Eligendi omnis illo saepe."], ["created_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "animi"], ["updated_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#new as HTML
+  Rendered admin/posts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts" 
+Started POST "/admin/posts" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hello world!", "content"=>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "is_published"=>"1"}, "button"=>""}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["content", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["created_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00], ["is_published", true], ["slug", "hello-world"], ["title", "hello-world"], ["updated_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admin/posts/5
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+Started GET "/admin/posts/5" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "5"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posts" [0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Nisi numquam cum harum dolorem consequuntur."], ["created_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "atque"], ["updated_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+Started GET "/admin/posts/6/edit" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "6"]]
+  Rendered admin/posts/_form.html.erb (1.3ms)
+  Rendered admin/posts/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+Started PUT "/admin/posts/6" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"terminator", "content"=>"\nNisi numquam cum harum dolorem consequuntur.", "is_published"=>"0"}, "commit"=>"Save", "id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mUPDATE "posts" SET "title" = 'terminator', "content" = '
+Nisi numquam cum harum dolorem consequuntur.', "updated_at" = '2014-02-20 01:13:18.475924' WHERE "posts"."id" = 6[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posts/6
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+Started GET "/admin/posts/6" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "is_published", "slug", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Rerum reprehenderit dolorum ratione sunt qui quis sed."], ["created_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00], ["is_published", false], ["slug", nil], ["title", "praesentium"], ["updated_at", Thu, 20 Feb 2014 01:13:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/admin/posts" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+  Rendered admin/posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+Started GET "/admin/posts/7" for 127.0.0.1 at 2014-02-19 17:13:18 -0800
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", "7"]]
+  Rendered admin/posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
