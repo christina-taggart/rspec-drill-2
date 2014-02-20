@@ -4,12 +4,16 @@ class Post < ActiveRecord::Base
   scope :recent, order: "created_at DESC", limit: 5
 
   before_save :titleize_title
-
+  after_save :slugify
   validates_presence_of :title, :content
 
   private
 
   def titleize_title
-    self.title = title.titleize
+    self.title = self.title.titleize
+  end
+
+  def slugify
+    self.slug = self.title.parameterize
   end
 end
